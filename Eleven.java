@@ -63,6 +63,22 @@ class IT{
     }
 }
 
+class subIT extends IT{
+//    subIT(String ml){
+//        super(ml);
+//    }
+    // we cannot access/modify this constructor from subclass because this is private in superClass
+    subIT(String ml, String blockchain){
+        super(ml, blockchain);
+    }
+    subIT(String ml, String blockchain, String robotics){
+        super(ml, blockchain, robotics);
+    }
+    subIT(String ml, String blockchain, String robotics, String software){
+        super(ml, blockchain, robotics, software);
+    }
+}
+
 
 
 class Eleven{
@@ -97,5 +113,45 @@ class Eleven{
         test.getProtected();
 //        test.getPrivate();       // this is private method and cannot be accessed
         test.getDefault();
+
+
+
+//        ---------------------------------------- FROM SUBCLASS --------------------------------------------------------------------------------
+
+        System.out.println("\n------------------------------FROM SUBCLASS------------------------------------------");
+        //Instantiating subclass with constructors having different access modifiers
+
+//        subIT subTech1 = new subIT("Python");      // this is private constructor and cannot be instantiated
+        subIT subTech2 = new subIT("Python", "Solidity");
+        subIT subTech3 = new subIT("Python", "Solidity", "C++");
+        subIT subTech4 = new subIT("Python", "Solidity", "C++", "Java");
+
+        IT subTest = new IT("Hello", "Hi", "Tata", "Bye");
+
+        //Accessing attributes of class having different access modifiers from subclass
+
+        System.out.println("\nsubTech2: " + subTech2.ML_public + " -Public");
+        System.out.println("subTech2: " + subTech2.BlockChain_protected + " -Protected\n");
+
+        System.out.println("subTech3: " + subTech3.ML_public + " -Public");
+        System.out.println("subTech3: " + subTech3.BlockChain_protected + " -Protected\n");
+//        System.out.println("subTech3: " + subTech3.Robotics_private + " -Private");
+//        this is private attribute and cannot be accessed from subclass
+
+        System.out.println("subTech4: " + subTech4.ML_public + " -Public");
+        System.out.println("subTech4: " + subTech4.BlockChain_protected + " -Protected");
+//        System.out.println("subTech4: " + subTech4.Robotics_private + " -Private");
+//        Same issue: this is private attribute and cannot be accessed from subclass
+        System.out.println("subTech4: " + subTech4.Software_default + " -Default\n");
+
+        //Accessing methods from subclass having different access modifiers
+        subTest.getPublic();
+        subTest.getProtected();
+//        test.getPrivate();       // this is private method and cannot be accessed from subclass
+        subTest.getDefault();
+
+
     }
 }
+
+
