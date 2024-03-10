@@ -34,3 +34,15 @@ class Calc{
 
     }
 }
+
+/*
+
+PACKAGE STRUCTURE
+        Lab2/
+    ├── src/
+    │   └── twelve/
+    │       ├── Calc.java
+    │       └── packages/
+    │           └── Add.java
+                └── Sub.java
+*/
