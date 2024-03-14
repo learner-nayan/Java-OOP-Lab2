@@ -42,8 +42,11 @@ class Ten{
     public static void main(String[] args){
         Watch ghadi = new Watch("1.5 Lakh");
         Rolex mahangoGhadi = new Rolex("Rolex", "1.5 Lakh");
+        Footballer player = new Footballer();
 
         System.out.println(ghadi.getWatchName());
         System.out.println(mahangoGhadi.getWatchName());
+
+        player.getFootballerName();
     }
 }
